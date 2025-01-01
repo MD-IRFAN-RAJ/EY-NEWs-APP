@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import countries from "./countries";
-import downArrow from "./../assets/downarrow.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowDown } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
+
 
 function Header() {
   const [active, setActive] = useState(false);
@@ -34,9 +33,9 @@ function Header() {
   }
   return (
     <header className="">
-      <nav class="fixed top-0 left-0 w-full h-auto bg-gray-800 z-10 flex items-center justify-around">
-        <h3 class="relative heading font-bold md:basis-1/6 text-2xl xs:basis-4/12 z-50 mb-5 mt-5">
-          News_Aggregator
+      <nav className=" top-0 left-0 w-full h-auto bg-gray-800 z-10 flex items-center justify-around">
+        <h3 className="relative heading font-bold md:basis-1/6 text-2xl xs:basis-4/12 z-50 mb-5 mt-5">
+          ChitChat World
         </h3>
 
         <ul
@@ -149,7 +148,7 @@ function Header() {
                     >
                       <img
                         src={element?.png}
-                        srcset={`https://flagcdn.com/32x24/${element?.iso_2_alpha}.png 2x`}
+                        srcSet={`https://flagcdn.com/32x24/${element?.iso_2_alpha}.png 2x`}
                         alt={element?.countryName}
                       />
                       <span>{element?.countryName}</span>
@@ -167,11 +166,11 @@ function Header() {
                 toggleTheme();
               }}
             >
-              <input type="checkbox" class="checkbox" id="checkbox" />
-              <label for="checkbox" class="checkbox-label">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
-                <span class="ball"></span>
+              <input type="checkbox" className="checkbox" id="checkbox" />
+              <label htmlFor="checkbox" className="checkbox-label">
+                <i className="fas fa-moon"></i>
+                <i className="fas fa-sun"></i>
+                <span className="ball"></span>
               </label>
             </Link>
           </li>

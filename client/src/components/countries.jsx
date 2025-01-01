@@ -314,13 +314,22 @@ twoLetterISO.forEach((element) => {
   countries.push(obj);
 });
 
+// function getCountryName(countryCode) {
+//   if (isoCountries.hasOwnProperty(countryCode)) {
+//     return isoCountries[countryCode];
+//   } else {
+//     return countryCode;
+//   }
+// }
 function getCountryName(countryCode) {
-  if (isoCountries.hasOwnProperty(countryCode)) {
-    return isoCountries[countryCode];
+  const upperCaseCode = countryCode.toUpperCase(); // Convert to uppercase
+  if (upperCaseCode in isoCountries) {
+    return isoCountries[upperCaseCode];
   } else {
-    return countryCode;
+    return upperCaseCode; // Default fallback
   }
 }
+
 
 console.log(countries);
 

@@ -3,6 +3,8 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 const app = express();
+const mongoose = require('mongoose');
+const authRoutes = require('../server/routes/auth'); // Correct path to your auth.js file
 
 // CORS configuration
 app.use(cors({
@@ -66,6 +68,16 @@ app.get("/country/:iso", async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
+app.use('/api/auth', authRoutes);
+
+
+
+
 app.listen(PORT, function () {
   console.log(`Server is running at port ${PORT}`);
 });

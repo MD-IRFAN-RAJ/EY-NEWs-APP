@@ -15,11 +15,12 @@ html, body {
 }
 
 .light-theme {
-    --background: url("https://tailwindcss.com/_next/static/media/hero@75.b2469a49.jpg");
+    /* --background: url("https://tailwindcss.com/_next/static/media/hero@75.b2469a49.jpg"); */
+    --background: url("../src/assets/white.jpg");
     --primary: #F8FAFC;
     --secondary: #0F172A;
     --txt: #000;
-    --heading: #2dd9fe;
+    --heading: #fe2d2d;
     --btn-color: #fff;
     --btn-background: #5f99be;
     --search-background: #000;
@@ -28,7 +29,8 @@ html, body {
 }
 
 .dark-theme {
-    --background: url("https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg");
+    --background: url("../src/assets/black.jpg");
+    /* --background: url("https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg"); */
     --primary: rgb(30,41,59);
     --secondary: #D5DDF0;
     --txt: #fff;
@@ -37,7 +39,6 @@ html, body {
     --btn-background: #5f99be;
     --search-background: #18181b;
 }
-
 body {
     background: var(--background);
     background-size: cover;

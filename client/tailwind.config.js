@@ -29,5 +29,4 @@ module.exports = {
       lightBgSecondary : "#0F172A",
     }
   },
-  plugins: [],
 }

@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import {  useState, useEffect } from "react";
 import EverythingCard from "./EverythingCard";
 import Loader from "./Loader";
 
@@ -24,6 +24,7 @@ function AllNews() {
     setError(null);
     fetch(
       `https://news-aggregator-dusky.vercel.app/all-news?page=${page}&pageSize=${pageSize}`
+      
     )
       .then((response) => {
         if (response.ok) {
