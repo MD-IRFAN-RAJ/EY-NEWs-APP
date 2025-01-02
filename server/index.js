@@ -8,7 +8,7 @@ const authRoutes = require('../server/routes/auth'); // Correct path to your aut
 
 // CORS configuration
 app.use(cors({
-  origin: '*', // Be cautious with this in production
+  origin: 'http://localhost:5173', // Be cautious with this in production
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
