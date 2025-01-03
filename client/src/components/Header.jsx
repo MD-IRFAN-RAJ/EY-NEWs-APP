@@ -7,6 +7,7 @@ import { faCircleArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   const [active, setActive] = useState(false);
+  const [Logout, setLogout] = useState(false);
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
   const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
 
@@ -48,7 +49,7 @@ function Header() {
           <li>
             <Link
               className="no-underline font-semibold"
-              to="/"
+              to="/home"
               onClick={() => {
                 setActive(!active);
               }}
@@ -172,6 +173,17 @@ function Header() {
                 <i className="fas fa-sun"></i>
                 <span className="ball"></span>
               </label>
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="no-underline font-semibold"
+              to="/"
+              onClick={() => {
+                setActive(!Logout);
+              }}
+            >
+              Logout
             </Link>
           </li>
         </ul>

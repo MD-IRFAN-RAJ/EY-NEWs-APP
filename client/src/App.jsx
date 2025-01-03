@@ -5,7 +5,7 @@ import AllNews from "./components/AllNews";
 import Footer from "./components/Footer";
 import TopHeadlines from "./components/TopHeadlines";
 import Search from "./components/Search";
-
+import HomePage from "../src/components/MainPage/MainPage";
 
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -22,6 +22,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* Public Routes */}
+          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/signup" element={<Signup />} />
 
