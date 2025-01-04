@@ -1,15 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types'; 
-import { Navigate } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { Navigate } from "react-router-dom";
 
-const ProtectedRoute = ({ token, children }) => {
-  return token ? children : <Navigate to="/login" />;
+const ProtectedRoute = ({ token, children, redirectPath = "/" }) => {
+  if (!token) {
+    console.log("Access denied: No token provided.");
+    return <Navigate to={redirectPath} replace />;
+  }
+  return children;
 };
 
-// Define prop types for validation
 ProtectedRoute.propTypes = {
-  token: PropTypes.string, // `token` should be a string (can be null or undefined)
-  children: PropTypes.node.isRequired, // `children` is required and must be a React node
+  token: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  redirectPath: PropTypes.string,
 };
 
 export default ProtectedRoute;

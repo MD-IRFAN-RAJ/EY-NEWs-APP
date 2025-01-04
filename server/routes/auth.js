@@ -28,7 +28,6 @@ router.post("/login", async (req, res) => {
   try {
     // Find the user by email
     const user = await User.findOne({ email });
-    console.log(user); // Log the user object
 
     if (!user) {
       return res.status(404).json({ message: "User not found" });
@@ -36,7 +35,6 @@ router.post("/login", async (req, res) => {
 
     // Compare the plaintext password with the hashed password stored in the database
     const isPasswordValid = await bcrypt.compare(password, user.password);
-    console.log("Password valid:", isPasswordValid);  // Log comparison result
 
     if (!isPasswordValid) {
       return res.status(401).json({ message: "Invalid credentials" });
@@ -45,7 +43,6 @@ router.post("/login", async (req, res) => {
     // Password is valid, generate JWT token
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
-    console.log("Generated JWT token:", token);  // Log the generated token
 
     // Respond with the token and user data
     return res.json({ token, user: { id: user._id, name: user.name, email: user.email } });
