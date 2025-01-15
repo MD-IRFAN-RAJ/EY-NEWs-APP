@@ -1,39 +1,94 @@
 /* HomePage.css */
+
 .homepage-container {
   text-align: center;
-  margin: 50px auto;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #e3f2fd, #bbdefb); /* Smooth blue gradient */
+  min-height: 100vh;
 }
 
 .homepage-heading {
-  font-size: 2.5rem;
-  color: #333;
+  font-size: 3rem;
+  color: #1a237e; /* Deep Indigo */
   margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .homepage-subheading {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 30px;
+  font-size: 1.4rem;
+  color: #3949ab; /* Medium Indigo */
+  margin-bottom: 40px;
+  font-weight: 500;
 }
 
 .homepage-buttons {
   display: flex;
   justify-content: center;
   gap: 20px;
+  margin-bottom: 40px;
 }
 
 .homepage-button {
-  background-color: #007BFF;
+  background-color: #42a5f5; /* Light Blue */
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
+  padding: 12px 25px;
+  font-size: 1.1rem;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(66, 165, 245, 0.3); /* Soft blue shadow */
 }
 
 .homepage-button:hover {
-  background-color: #0056b3;
+  background-color: #1e88e5; /* Darker Blue */
+  transform: translateY(-2px);
+}
+
+.homepage-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(66, 165, 245, 0.5); /* Focused blue glow */
+}
+
+.homepage-carousel {
+  margin-top: 40px;
+  width: 80%;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for images */
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(33, 33, 33, 0.6); /* Dark gray with opacity */
+  color: white;
+  padding: 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+  background-color: rgba(33, 33, 33, 0.8); /* Slightly darker on hover */
+}
+
+.carousel-button:nth-child(1) {
+  left: 10px;
+}
+
+.carousel-button:nth-child(3) {
+  right: 10px;
 }

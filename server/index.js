@@ -8,8 +8,7 @@ const authRoutes = require('../server/routes/auth'); // Correct path to your aut
 
 // CORS configuration
 app.use(cors({
-  origin: process.env.ORIGIN || 'http://localhost:5173',
-// Be cautious with this in production
+   origin: 'http://localhost:5173', // Be cautious with this in production
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -37,6 +36,7 @@ async function makeApiRequest(url) {
     };
   }
 }
+
 
 app.get("/all-news", async (req, res) => {
   let pageSize = parseInt(req.query.pageSize) || 80;
