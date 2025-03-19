@@ -10,7 +10,9 @@ const authRoutes = require('../server/routes/auth');
 app.use(cors({
    origin: 'https://ey-news-app-display.onrender.com', // Be cautious with this in production
   methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+   credentials: true
+   
 }));
 
 app.use(express.urlencoded({ extended: true }));
