@@ -8,7 +8,7 @@ const authRoutes = require('../server/routes/auth'); // Correct path to your aut
 
 // CORS configuration
 app.use(cors({
-   origin: 'http://localhost:5173', // Be cautious with this in production
+   origin: 'https://ey-news-app-display.onrender.com', // Be cautious with this in production
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
