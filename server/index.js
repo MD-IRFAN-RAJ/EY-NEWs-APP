@@ -4,7 +4,7 @@ const axios = require("axios");
 const cors = require("cors");
 const app = express();
 const mongoose = require('mongoose');
-const authRoutes = require('../server/routes/auth'); // Correct path to your auth.js file
+const authRoutes = require('../server/routes/auth'); 
 
 // CORS configuration
 app.use(cors({
